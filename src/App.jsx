@@ -4,7 +4,7 @@ import "./App.css";
 function Navbar() {
   return (
     <div className="navbar">
-      <h1>My E-Commerce Site</h1>
+      <h1>Cachanflas Store</h1>
     </div>
   );
 }
@@ -21,7 +21,12 @@ function SearchBar() {
 function Product({ product, onDelete, onEdit, isOwnerView }) {
   return (
     <div className="product">
-      <img src={product.img} alt={product.title} className="product-image" />
+      <img
+        src={product.img}
+        alt={product.title}
+        sizes="100px"
+        className="product-image"
+      />
       <h3>{product.title}</h3>
       <p>Price: ${product.price}</p>
       <p>Seller: {product.seller}</p>
@@ -34,22 +39,46 @@ function Product({ product, onDelete, onEdit, isOwnerView }) {
     </div>
   );
 }
-
-function Pagination({ itemsPerPage, totalItems, paginate }) {
+function Pagination({ itemsPerPage, totalItems, paginate, currentPage }) {
   const pageNumbers = [];
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, currentPage + 2);
 
-  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+  if (startPage > 1) {
+    pageNumbers.push(1);
+    if (startPage > 2) {
+      pageNumbers.push("...");
+    }
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(i);
+  }
+
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) {
+      pageNumbers.push("...");
+    }
+    pageNumbers.push(totalPages);
   }
 
   return (
     <nav>
       <ul className="pagination">
         {pageNumbers.map((number) => (
-          <li key={number}>
-            <a onClick={() => paginate(number)} href="#!">
-              {number}
-            </a>
+          <li key={number} className="page-item">
+            {number === "..." ? (
+              <span>...</span>
+            ) : (
+              <a
+                onClick={() => paginate(number)}
+                href="#!"
+                className="page-link"
+              >
+                {number}
+              </a>
+            )}
           </li>
         ))}
       </ul>
@@ -155,13 +184,14 @@ function OwnerView({
 function ClientView({ products }) {
   return (
     <div className="client-view">
-      {products.map((product) => (
-        <Product key={product.id} product={product} isOwnerView={false} />
-      ))}
+      <div className="product-grid">
+        {products.map((product) => (
+          <Product key={product.id} product={product} isOwnerView={false} />
+        ))}
+      </div>
     </div>
   );
 }
-
 const initialProducts = [
   {
     id: 1,
@@ -254,7 +284,7 @@ function App() {
   const [isOwner, setIsOwner] = useState(false);
   const [productToEdit, setProductToEdit] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(25); // 5x5 grid
+  const [itemsPerPage] = useState(10); // 5x5 grid
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -273,15 +303,17 @@ function App() {
 
   const saveProduct = (newProduct) => {
     if (productToEdit) {
+      // Update existing product
       setProducts(
         products.map((product) =>
           product.id === newProduct.id ? newProduct : product
         )
       );
     } else {
-      setProducts([...products, newProduct]);
+      // Add new product at the beginning of the array
+      setProducts([newProduct, ...products]);
     }
-    setProductToEdit(null);
+    setProductToEdit(null); // Clear editing state
   };
 
   const deleteProduct = (productId) => {
@@ -315,6 +347,7 @@ function App() {
         itemsPerPage={itemsPerPage}
         totalItems={products.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

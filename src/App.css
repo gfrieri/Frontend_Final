@@ -2,117 +2,149 @@
   text-align: center;
 }
 
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
-  background-color: #333;
+  background-color: #5d93e1;
   color: white;
-  padding: 10px 0;
+  padding: 15px 0;
+  text-align: center;
 }
 
 .search-bar {
-  margin: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  padding: 20px;
 }
 
 .search-bar input {
   padding: 10px;
-  width: 300px;
+  width: 250px;
+  border: 1px solid #dddddd;
+  margin-right: 10px;
 }
 
 .search-bar button {
   padding: 10px 20px;
+  background-color: #ffc107;
+  border: none;
   cursor: pointer;
 }
 
-.view-toggle {
-  margin: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
+.owner-view,
+.client-view {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.product {
-  border: 1px solid #ddd;
-  padding: 20px;
-  width: 200px;
-}
-
-.product-image-placeholder {
-  height: 100px;
-  background-color: #ddd;
-  margin-bottom: 10px;
-}
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.client-view,
-.owner-view {
+.owner-view .product-grid,
+.client-view .product-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 items per row */
-  grid-gap: 10px; /* Space between grid items */
-  padding: 10px;
-  /* Centering the grid */
-  margin: 0 auto;
-  max-width: 1200px; /* Adjust based on your design needs */
+  grid-gap: 10px;
 }
 
 .product {
-  border: 1px solid #ddd;
-  padding: 10px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  padding: 15px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
-  max-width: 100%;
-  height: auto;
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Cover the area, crop if necessary */
+  border-radius: 5px; /* Optional: for rounded corners */
   margin-bottom: 10px;
 }
 
+/* Forms and Buttons */
+button,
+input[type="submit"] {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #e6b306;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+}
+
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
-  padding: 0;
   list-style: none;
-  margin-top: 20px; /* Add space above the pagination */
+  padding: 20px 0;
 }
 
 .pagination li {
   margin: 0 5px;
 }
 
-.pagination li a {
+.pagination a {
   text-decoration: none;
-  color: blue;
-  cursor: pointer;
+  color: #5d93e1;
+  padding: 5px 10px;
+  border: 1px solid #5d93e1;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
-.client-view .product-grid,
-.owner-view .product-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
-  grid-gap: 10px;
-  padding: 10px;
+.pagination a:hover {
+  background-color: #5d93e1;
+  color: white;
 }
 
-.product {
-  border: 1px solid #ddd;
-  padding: 10px;
+.pagination .active a {
+  background-color: #5d93e1;
+  color: white;
+  border-color: #5d93e1;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
   text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-.product-image {
-  max-width: 100px; /* Adjust as needed */
-  height: auto;
-  margin-bottom: 10px;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar ul li {
+    display: block;
+    margin: 5px 0;
+  }
 }
