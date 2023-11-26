@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.search-bar input {
+  padding: 10px;
+  width: 300px;
 }
 
-.card {
-  padding: 2em;
+.search-bar button {
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.view-toggle {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 200px;
+}
+
+.product-image-placeholder {
+  height: 100px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.client-view,
+.owner-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  grid-gap: 10px; /* Space between grid items */
+  padding: 10px;
+  /* Centering the grid */
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust based on your design needs */
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px; /* Add space above the pagination */
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.client-view .product-grid,
+.owner-view .product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100px; /* Adjust as needed */
+  height: auto;
+  margin-bottom: 10px;
 }
