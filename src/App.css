@@ -1,7 +1,4 @@
-.App {
-  text-align: center;
-}
-
+/* General Styles */
 body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
@@ -10,38 +7,77 @@ body {
   padding: 0;
 }
 
+.App {
+  text-align: center;
+}
+
+/* Navbar Styles */
 .navbar {
   background-color: #5d93e1;
   color: white;
   padding: 15px 0;
+  /*background: url("path_to_your_texture_image.jpg") repeat;  */
+  background-color: #5d93e1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 2px,
+    transparent 50px
+  );
+  padding: 20px 0;
   text-align: center;
+  /* For positioning the search box */
 }
 
-.search-bar {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.search-bar input {
+/* Search Box Encapsulation */
+.search-container {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
   padding: 10px;
-  width: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: -25px;
+  margin-bottom: 10px;
+}
+
+.search-bar input,
+.search-bar select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
   border: 1px solid #dddddd;
-  margin-right: 10px;
+  padding-left: 20px;
+  margin-top: 20px;
+  padding-right: 20px;
 }
 
 .search-bar button {
-  padding: 10px 20px;
+  margin-top: 18px;
+  padding: 0px 20px;
+  height: 40px;
   background-color: #ffc107;
   border: none;
   cursor: pointer;
 }
 
+/* Form and Input Styles */
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+}
+
+/* Product Grid */
 .owner-view,
 .client-view {
   max-width: 1200px;
-  margin: 20px auto;
-  padding: 10px;
+  margin: auto;
 }
 
 .owner-view .product-grid,
@@ -57,6 +93,7 @@ body {
   padding: 15px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .product-image {
@@ -67,10 +104,10 @@ body {
   margin-bottom: 10px;
 }
 
-/* Forms and Buttons */
+/* Button Styles */
 button,
 input[type="submit"] {
-  background-color: #ffc107;
+  background-color: #5d93e1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -82,16 +119,7 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: #e6b306;
-}
-
-form input,
-form select,
-form textarea {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #dddddd;
+  background-color: #4a7abc;
 }
 
 /* Pagination */
@@ -99,7 +127,7 @@ form textarea {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .pagination li {
@@ -115,15 +143,10 @@ form textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.pagination a:hover {
-  background-color: #5d93e1;
-  color: white;
-}
-
+.pagination a:hover,
 .pagination .active a {
   background-color: #5d93e1;
   color: white;
-  border-color: #5d93e1;
 }
 
 /* Footer */
@@ -146,5 +169,11 @@ footer {
   .navbar ul li {
     display: block;
     margin: 5px 0;
+  }
+
+  .search-container {
+    position: static;
+    transform: translateX(0);
+    margin-top: 20px;
   }
 }

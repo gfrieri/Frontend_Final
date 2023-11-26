@@ -12,8 +12,10 @@ function Navbar() {
 function SearchBar() {
   return (
     <div className="search-bar">
-      <input type="text" placeholder="Search goods or services here..." />
-      <button type="button">Search Now!</button>
+      <div className="search-container">
+        <input type="text" placeholder="Search goods or services here..." />
+        <button type="button">Search Now!</button>
+      </div>
     </div>
   );
 }
@@ -317,7 +319,28 @@ function App() {
   };
 
   const deleteProduct = (productId) => {
-    setProducts(products.filter((product) => product.id !== productId));
+    // Find the index of the product to be deleted
+    const productIndex = products.findIndex(
+      (product) => product.id === productId
+    );
+
+    // Calculate the current page's first index
+    const firstIndexOfCurrentPage = (currentPage - 1) * itemsPerPage;
+
+    // Check if the product is the only one on the last page
+    if (
+      productIndex === firstIndexOfCurrentPage &&
+      (products.length - 1) % itemsPerPage === 0 &&
+      currentPage > 1
+    ) {
+      setCurrentPage(currentPage - 1); // Move to the previous page
+    }
+
+    // Delete the product from the array
+    const updatedProducts = products.filter(
+      (product) => product.id !== productId
+    );
+    setProducts(updatedProducts);
   };
 
   const editProduct = (product) => {
