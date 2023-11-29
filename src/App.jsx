@@ -1,46 +1,76 @@
 import React, { useState, useEffect } from "react";
+import initialProducts from "./initialProducts.json";
 import "./App.css";
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className="navbar no-highlight">
       <h1>Cachanflas Store</h1>
     </div>
   );
 }
 
-function SearchBar() {
+function SearchBar({
+  onSearchChange,
+  onSearchButtonClick,
+  onClearSearch,
+  searchInput,
+}) {
   return (
-    <div className="search-bar">
+    <div className="search-bar no-highlight">
       <div className="search-container">
-        <input type="text" placeholder="Search goods or services here..." />
-        <button type="button">Search Now!</button>
+        <input
+          type="text"
+          placeholder="Search goods or services here..."
+          onChange={onSearchChange}
+          value={searchInput}
+        />
+        <button type="button" onClick={onSearchButtonClick}>
+          Search Now!
+        </button>
+        <button type="button" onClick={onClearSearch}>
+          Clear Search
+        </button>
       </div>
     </div>
   );
 }
+function Product({ product, onDelete, onEdit, isOwnerView, onPurchase }) {
+  // Function to render filled, half-filled, and empty stars based on the rating
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+    const emptyStars = 5 - fullStars - halfStar;
+    return (
+      <>
+        {"★".repeat(fullStars)}
+        {halfStar ? "½" : ""}
+        {"☆".repeat(emptyStars)}
+      </>
+    );
+  };
 
-function Product({ product, onDelete, onEdit, isOwnerView }) {
   return (
     <div className="product">
-      <img
-        src={product.img}
-        alt={product.title}
-        sizes="100px"
-        className="product-image"
-      />
+      <img src={product.img} alt={product.title} className="product-image" />
       <h3>{product.title}</h3>
       <p>Price: ${product.price}</p>
       <p>Seller: {product.seller}</p>
+      {/* Render the stars based on the product's rating */}
+      <div className="product-rating">{renderStars(product.rating)}</div>
       {isOwnerView && (
         <>
           <button onClick={() => onEdit(product)}>Edit</button>
           <button onClick={() => onDelete(product.id)}>Delete</button>
         </>
       )}
+      {!isOwnerView && (
+        <button onClick={() => onPurchase(product.id)}>Purchase</button>
+      )}
     </div>
   );
 }
+
 function Pagination({ itemsPerPage, totalItems, paginate, currentPage }) {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -90,11 +120,14 @@ function Pagination({ itemsPerPage, totalItems, paginate, currentPage }) {
 
 function ProductForm({ onSave, productToEdit, setProductToEdit }) {
   const [product, setProduct] = useState(
-    productToEdit || { title: "", price: "", seller: "", img: "" }
+    productToEdit || { title: "", price: "", seller: "", img: "", rating: "" }
   );
 
   useEffect(() => {
-    setProduct(productToEdit || { title: "", price: "", seller: "", img: "" });
+    // When editing, populate the form with the existing product details, including the rating
+    setProduct(
+      productToEdit || { title: "", price: "", seller: "", img: "", rating: "" }
+    );
   }, [productToEdit]);
 
   const handleChange = (e) => {
@@ -107,8 +140,9 @@ function ProductForm({ onSave, productToEdit, setProductToEdit }) {
     onSave({
       ...product,
       id: product.id || Date.now(),
+      rating: parseFloat(product.rating) || 0, // Make sure to parse the rating as a float
     });
-    setProduct({ title: "", price: "", seller: "", img: "" }); // Reset form after save
+    setProduct({ title: "", price: "", seller: "", img: "", rating: "" }); // Reset form after save
     setProductToEdit(null); // Exit edit mode
   };
 
@@ -141,6 +175,17 @@ function ProductForm({ onSave, productToEdit, setProductToEdit }) {
         value={product.img}
         onChange={handleChange}
         placeholder="Image URL"
+        required
+      />
+      <input
+        name="rating"
+        type="number"
+        placeholder="Rating" // Placeholder text for rating
+        step="0.1" // Allow decimal ratings
+        min="0"
+        max="5"
+        value={product.rating}
+        onChange={handleChange}
         required
       />
       <button type="submit">Save Product</button>
@@ -184,163 +229,99 @@ function OwnerView({
 }
 
 function ClientView({ products }) {
+  const handlePurchase = (productId) => {
+    // This is a placeholder function to simulate a purchase
+    alert(`Product with ID ${productId} has been purchased.`);
+  };
+
   return (
     <div className="client-view">
       <div className="product-grid">
         {products.map((product) => (
-          <Product key={product.id} product={product} isOwnerView={false} />
+          <Product
+            key={product.id}
+            product={product}
+            isOwnerView={false}
+            onPurchase={handlePurchase}
+          />
         ))}
       </div>
     </div>
   );
 }
-const initialProducts = [
-  {
-    id: 1,
-    title: "Vintage Leather Bag",
-    price: "150",
-    seller: "Alice",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 2,
-    title: "Antique Wooden Chair",
-    price: "250",
-    seller: "Bob",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 3,
-    title: "Handcrafted Wooden Bowl",
-    price: "75",
-    seller: "Charlie",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 4,
-    title: "Silver Necklace",
-    price: "100",
-    seller: "Diana",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 5,
-    title: "Organic Honey",
-    price: "15",
-    seller: "Eve",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 6,
-    title: "Artisan Coffee Beans",
-    price: "22",
-    seller: "Frank",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 7,
-    title: "Vintage Wool Scarf",
-    price: "45",
-    seller: "Grace",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 8,
-    title: "Leather Wallet",
-    price: "80",
-    seller: "Henry",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 9,
-    title: "Ceramic Vase",
-    price: "60",
-    seller: "Isabella",
-    img: "https://via.placeholder.com/100",
-  },
-  {
-    id: 10,
-    title: "Stainless Steel Water Bottle",
-    price: "30",
-    seller: "Jack",
-    img: "https://via.placeholder.com/100",
-  },
-];
-
-for (let i = 11; i <= 50; i++) {
-  initialProducts.push({
-    id: i,
-    title: `Product ${i}`,
-    price: (Math.random() * 100).toFixed(2), // Random price
-    seller: `Seller ${i}`,
-    img: `https://via.placeholder.com/100?text=Product+${i}`, // Placeholder image
-  });
-}
 
 function App() {
   const [products, setProducts] = useState(() => {
-    // Get products from localStorage or use initial products
     const storedProducts = localStorage.getItem("products");
     return storedProducts ? JSON.parse(storedProducts) : initialProducts;
   });
+  const [searchInput, setSearchInput] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [isOwner, setIsOwner] = useState(false);
   const [productToEdit, setProductToEdit] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10); // 5x5 grid
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products") || "[]");
-    setProducts(storedProducts);
+    setProducts(storedProducts.length > 0 ? storedProducts : initialProducts);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
   }, [products]);
 
+  const handleSearchInputChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
+  const handleSearchButtonClick = () => {
+    setSearchQuery(searchInput);
+    setCurrentPage(1);
+  };
+
+  const handleClearSearch = () => {
+    setSearchInput(""); // Clear the input field
+    setSearchQuery(""); // Clear the search query to show all results
+    setCurrentPage(1); // Optional: Reset to the first page
+  };
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredProducts.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
   const saveProduct = (newProduct) => {
     if (productToEdit) {
-      // Update existing product
       setProducts(
         products.map((product) =>
           product.id === newProduct.id ? newProduct : product
         )
       );
     } else {
-      // Add new product at the beginning of the array
       setProducts([newProduct, ...products]);
     }
-    setProductToEdit(null); // Clear editing state
+    setProductToEdit(null);
   };
 
   const deleteProduct = (productId) => {
-    // Find the index of the product to be deleted
-    const productIndex = products.findIndex(
-      (product) => product.id === productId
-    );
+    const newProducts = products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
 
-    // Calculate the current page's first index
-    const firstIndexOfCurrentPage = (currentPage - 1) * itemsPerPage;
-
-    // Check if the product is the only one on the last page
-    if (
-      productIndex === firstIndexOfCurrentPage &&
-      (products.length - 1) % itemsPerPage === 0 &&
-      currentPage > 1
-    ) {
-      setCurrentPage(currentPage - 1); // Move to the previous page
+    // Check if there are no items on the current page after deletion
+    if (currentPage > 1 && newProducts.length <= indexOfFirstItem) {
+      setCurrentPage(currentPage - 1);
     }
-
-    // Delete the product from the array
-    const updatedProducts = products.filter(
-      (product) => product.id !== productId
-    );
-    setProducts(updatedProducts);
   };
 
   const editProduct = (product) => {
@@ -350,13 +331,21 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <SearchBar />
-      <button onClick={() => setIsOwner(!isOwner)}>
+      <SearchBar
+        onSearchChange={handleSearchInputChange}
+        onSearchButtonClick={handleSearchButtonClick}
+        onClearSearch={handleClearSearch}
+        searchInput={searchInput}
+      />
+      <button
+        className="switch-button no-highlight"
+        onClick={() => setIsOwner(!isOwner)}
+      >
         Switch to {isOwner ? "Client" : "Owner"} View
       </button>
       {isOwner ? (
         <OwnerView
-          products={currentItems} // Use currentItems for OwnerView
+          products={currentItems}
           onSave={saveProduct}
           onDelete={deleteProduct}
           onEdit={editProduct}
@@ -364,14 +353,16 @@ function App() {
           setProductToEdit={setProductToEdit}
         />
       ) : (
-        <ClientView products={currentItems} /> // Use currentItems for ClientView
+        <ClientView products={currentItems} />
       )}
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={products.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
+      {filteredProducts.length > itemsPerPage && ( // Condition to display pagination
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={filteredProducts.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      )}
     </div>
   );
 }

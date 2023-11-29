@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "title": "Boss Pedal de sobremarcha OD-3",
+    "price": "105.92",
+    "seller": "Alice",
+    "img": "https://m.media-amazon.com/images/I/717B-x0qpbL._AC_SY879_.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "title": "Paquete de 3 cables para instrumentos",
+    "price": "9.99",
+    "seller": "Bob",
+    "img": "https://m.media-amazon.com/images/I/81tTCwA3eBL._SX522_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "title": "Mini pedal de efectos Ibanez Tube",
+    "price": "69.49",
+    "seller": "Charlie",
+    "img": "https://m.media-amazon.com/images/I/61esIwGaucL._AC_SY879_.jpg",
+    "rating": 4.2
+  },
+  {
+    "id": 4,
+    "title": "Pedal de distorsi\u00f3n Pro Co RAT2",
+    "price": "78",
+    "seller": "Diana",
+    "img": "https://m.media-amazon.com/images/I/61gHNmcYvFL._AC_SX679_.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "title": "Line 6 POD Go",
+    "price": "499.99",
+    "seller": "Eve",
+    "img": "https://m.media-amazon.com/images/I/819A+A4f3oL._AC_SX679_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "title": "Boss Conmutador de efectos m\u00faltiples MS-3",
+    "price": "449.99",
+    "seller": "Frank",
+    "img": "https://m.media-amazon.com/images/I/61ViRkU1-WS._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 7,
+    "title": "SAMSUNG - Monitor curvo Odyssey G55A QHD de 32 pulgadas",
+    "price": "349.99",
+    "seller": "Grace",
+    "img": "https://m.media-amazon.com/images/I/81a+yL6ii9L._AC_SX466_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 8,
+    "title": "Crucial T500 1TB Gen4 NVMe M.2 SSD interno",
+    "price": "169.99",
+    "seller": "Henry",
+    "img": "https://m.media-amazon.com/images/I/51cl+g8zHpL._AC_SX466_.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 9,
+    "title": "SAMSUNG Tarjeta de memoria microSD PRO Plus + adaptador, 256 GB MicroSDXC",
+    "price": "29.99",
+    "seller": "Isabella",
+    "img": "https://m.media-amazon.com/images/I/61L5e3bTxJL._AC_SX466_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 10,
+    "title": "Anker Cable de carga USB 2.0 tipo C",
+    "price": "17.99",
+    "seller": "Emily",
+    "img": "https://m.media-amazon.com/images/I/71xQOCh0SHL._AC_SX569_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 11,
+    "title": "Mochila para laptop para ni\u00f1as, mochila antirrobo de 15.6 pulgadas",
+    "price": "39.99",
+    "seller": "Luna",
+    "img": "https://m.media-amazon.com/images/I/71-ax6krLmL._AC_SX466_.jpg",
+    "rating": 4.2
+  },
+  {
+    "id": 12,
+    "title": "AMD Procesador de escritorio desbloqueado Ryzen 9 5900X",
+    "price": "569.99",
+    "seller": "Zoey",
+    "img": "https://m.media-amazon.com/images/I/616VM20+AzL._AC_SX466_.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 13,
+    "title": "COMFEE' EM720CPL-PM - Horno microondas para encimera",
+    "price": "81.99",
+    "seller": "Nora",
+    "img": "https://m.media-amazon.com/images/I/81dsDxFMqxL._AC_SX522_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 14,
+    "title": "TP-Link AC1200 - Extensor de rango de WiFi",
+    "price": "34.99",
+    "seller": "Lily",
+    "img": "https://m.media-amazon.com/images/I/4170I9VYmiL._AC_SX466_.jpg",
+    "rating": 4.0
+  },
+  {
+    "id": 15,
+    "title": "OMOTON Soporte para computadora port\u00e1til para escritorio",
+    "price": "29.99",
+    "seller": "Lillian",
+    "img": "https://m.media-amazon.com/images/I/71oiJ-H7nkL._AC_SX679_.jpg",
+    "rating": 4.8
+  },
+  {
+    "id": 16,
+    "title": "Elebase Adaptador USB a USB C, paquete de 4",
+    "price": "11.99",
+    "seller": "Layla",
+    "img": "https://m.media-amazon.com/images/I/61nHx+1RR5L._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 17,
+    "title": "Donner - Pedal afinador, pedal afinador de guitarra crom\u00e1tica ",
+    "price": "39.99",
+    "seller": "Lily",
+    "img": "https://m.media-amazon.com/images/I/71tS8flkrXL._AC_SX679_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 18,
+    "title": "Audio-Technica AT2035 Micr\u00f3fono de condensador cardioide",
+    "price": "149.99",
+    "seller": "Hannah",
+    "img": "https://m.media-amazon.com/images/I/71IJcvT6qbL._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 19,
+    "title": "MSI MAG B550 TOMAHAWK - Placa base para juegos",
+    "price": "169.99",
+    "seller": "Amelia",
+    "img": "https://m.media-amazon.com/images/I/910jyKG9QlL._AC_SX466_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 20,
+    "title": "Marvel M\u00e1scara de Spider-Man Across The Spider-Verse 2099",
+    "price": "11.99",
+    "seller": "Hazel",
+    "img": "https://m.media-amazon.com/images/I/81noVQN+mhL._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 21,
+    "title": "MONOPOLIO - Juego de mesa edici\u00f3n El se\u00f1or de los Anillos",
+    "price": "44.99",
+    "seller": "Avery",
+    "img": "https://m.media-amazon.com/images/I/81d7LiO88EL._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 22,
+    "title": "HUION KAMVAS - Tableta de dibujo gr\u00e1fico con pantalla de 16 pulgadas",
+    "price": "420.99",
+    "seller": "Olivia",
+    "img": "https://m.media-amazon.com/images/I/61LFlDNreWL._AC_SX466_.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 23,
+    "title": "Clarks, colecci\u00f3n Hope Roxanne, Mocas\u00edn para mujer",
+    "price": "55.99",
+    "seller": "Scarlett",
+    "img": "https://m.media-amazon.com/images/I/71rYMB9uPDL._AC_SY695_.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 24,
+    "title": "DASH Mini waflera m\u00faltiple",
+    "price": "39.99",
+    "seller": "Madison",
+    "img": "https://m.media-amazon.com/images/I/81jRp1AazNL._AC_SX679_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 25,
+    "title": "Energizer - Linterna frontal LED (2 unidades) Universal+",
+    "price": "16.99",
+    "seller": "Natalie",
+    "img": "https://m.media-amazon.com/images/I/71DmT9ZuOuL._AC_SX679_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 26,
+    "title": "DEWALT Juego de puntas de destornillador, gu\u00eda de accionamiento magn\u00e9tico, 14 piezas",
+    "price": "13.99",
+    "seller": "Bella",
+    "img": "https://m.media-amazon.com/images/I/81E4aRZEPAL._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 27,
+    "title": "PURA D'OR Spray protector t\u00e9rmico de aceite de arg\u00e1n (8 onzas)",
+    "price": "15.99",
+    "seller": "Abigail",
+    "img": "https://m.media-amazon.com/images/I/61QLV5UFDIL._SX466_.jpg",
+    "rating": 4.2
+  },
+  {
+    "id": 28,
+    "title": "CREE XML T6 3000 l\u00famenes t\u00e1ctico linterna",
+    "price": "11.99",
+    "seller": "Isabelle",
+    "img": "https://m.media-amazon.com/images/I/71yrb7VHWkL._AC_SX679_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 29,
+    "title": "Aud\u00edfonos profesionales abiertos Sennheiser HD 600",
+    "price": "449.95",
+    "seller": "Grace",
+    "img": "https://m.media-amazon.com/images/I/81op1KfxDBL._AC_SX679_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 30,
+    "title": "Audio-Technica AT-LP120XUSB-SV",
+    "price": "349.00",
+    "seller": "Emily",
+    "img": "https://m.media-amazon.com/images/I/81LDEgi0awL._AC_SX466_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 31,
+    "title": "Anker Adaptador USB C a HDMI (4K @60Hz)",
+    "price": "17.99",
+    "seller": "Zoe",
+    "img": "https://m.media-amazon.com/images/I/51I0DpppkJL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 32,
+    "title": "MSI Vigor GK30 Combo",
+    "price": "69.99",
+    "seller": "Savannah",
+    "img": "https://m.media-amazon.com/images/I/81roYAHWN9L._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 33,
+    "title": "MSI Immerse GH50",
+    "price": "89.99",
+    "seller": "Amelia",
+    "img": "https://m.media-amazon.com/images/I/715Mn0c77fL._AC_SX466_.jpg",
+    "rating": 5.0
+  },
+  {
+    "id": 34,
+    "title": "KontrolFreek FPS Freek Galaxy Purple para Xbox One y Xbox Series X Controller",
+    "price": "21.99",
+    "seller": "Violet",
+    "img": "https://m.media-amazon.com/images/I/717plKaukPL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 35,
+    "title": "CRUA Monitor curvo para juegos de 27 pulgadas, 144 hz/165 Hz",
+    "price": "139.99",
+    "seller": "Hazel",
+    "img": "https://m.media-amazon.com/images/I/612vM0pdKCL._AC_SX679_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 36,
+    "title": "KAMRUI Mini PC AM06PRO, AMD Ryzen 5 5500U (6C/12T, hasta 4.0 GHz)",
+    "price": "279.95",
+    "seller": "Nora",
+    "img": "https://m.media-amazon.com/images/I/81hetW206aL._AC_SX466_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 37,
+    "title": "AILIHEN C8 - Auriculares con cable con micr\u00f3fono y control de volumen",
+    "price": "25.98",
+    "seller": "Mia",
+    "img": "https://m.media-amazon.com/images/I/71dqmrPyyDL._AC_SX466_.jpg",
+    "rating": 4.3
+  },
+  {
+    "id": 38,
+    "title": "Altavoces de computadora, barra de sonido de computadora Bluetooth",
+    "price": "79.99",
+    "seller": "Hailey",
+    "img": "https://m.media-amazon.com/images/I/61d9wjy1EgL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 39,
+    "title": "Koonie Ventilador de escritorio recargable de 10000 mAh",
+    "price": "49.98",
+    "seller": "Zoe",
+    "img": "https://m.media-amazon.com/images/I/71TX1S75XzL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 40,
+    "title": "Combo de teclado y mouse inal\u00e1mbricos",
+    "price": "40.99",
+    "seller": "Chloe",
+    "img": "https://m.media-amazon.com/images/I/61T42vMOfJL._AC_SX466_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 41,
+    "title": "Arteck Rat\u00f3n Bluetooth inal\u00e1mbrico multidispositivo",
+    "price": "23.99",
+    "seller": "Emma",
+    "img": "https://m.media-amazon.com/images/I/61VkA0kcYaL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 42,
+    "title": "Soporte para reposacabezas de autom\u00f3vil",
+    "price": "15.99",
+    "seller": "Sophia",
+    "img": "https://m.media-amazon.com/images/I/515MbSX6scL._AC_SX466_.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 43,
+    "title": "SABRENT Adaptador de sonido est\u00e9reo externo USB tipo C",
+    "price": "9.99",
+    "seller": "Emily",
+    "img": "https://m.media-amazon.com/images/I/71mk-XSQhVL._AC_SX466_.jpg",
+    "rating": 4.3
+  },
+  {
+    "id": 44,
+    "title": "eXtremeRate Custom Shell for Xbox Series X & S Controller",
+    "price": "16.99",
+    "seller": "Bella",
+    "img": "https://m.media-amazon.com/images/I/71Ws-N+1ihL._AC_SX466_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 45,
+    "title": "Teclado de computadora con cable, teclado USB Plug Play",
+    "price": "19.99",
+    "seller": "Hazel",
+    "img": "https://m.media-amazon.com/images/I/61s6ZL3Vg3L._AC_SX466_.jpg",
+    "rating": 4.4
+  },
+  {
+    "id": 46,
+    "title": "Champion Sports Bal\u00f3n de f\u00fatbol retro",
+    "price": "12.99",
+    "seller": "Savannah",
+    "img": "https://m.media-amazon.com/images/I/71TXD5h9qEL._AC_SX679_.jpg",
+    "rating": 4.5
+  },
+  {
+    "id": 47,
+    "title": "Bedsure Cama ortop\u00e9dica para perros medianos",
+    "price": "59.99",
+    "seller": "Grace",
+    "img": "https://m.media-amazon.com/images/I/711+ewPRcML._AC_SX679_.jpg",
+    "rating": 4.6
+  },
+  {
+    "id": 48,
+    "title": "Living proof Tratamiento del cuero cabelludo seco",
+    "price": "38.00",
+    "seller": "Ellie",
+    "img": "https://m.media-amazon.com/images/I/512m+Z1NnyL._SX522_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 49,
+    "title": "Marshall Kilburn II",
+    "price": "299.99",
+    "seller": "Zoe",
+    "img": "https://m.media-amazon.com/images/I/71rJy3iVNRL._AC_SX466_.jpg",
+    "rating": 4.7
+  },
+  {
+    "id": 50,
+    "title": "Garmin Instinct 2X Solar",
+    "price": "449.99",
+    "seller": "Hannah",
+    "img": "https://m.media-amazon.com/images/I/71nqWqCFTkL._AC_SX466_.jpg",
+    "rating": 4.5
+  }
+]
